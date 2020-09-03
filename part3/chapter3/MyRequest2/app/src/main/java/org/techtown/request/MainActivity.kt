@@ -36,7 +36,13 @@ class MainActivity : AppCompatActivity() {
             {
                 output1.append("\n응답 -> ${it}")
 
-                processResponse(it)
+                // 키사용초과 여부 확인
+                if (it.indexOf("faultInfo") > -1) {
+                    output1.append("키사용량이 초과되었다면 아래 사이트에 가입 후 키를 발급받아 그 키로 사용하세요.")
+                    output1.append("http://kobis.or.kr/kobisopenapi")
+                } else {
+                    processResponse(it)
+                }
             },
             {
                 output1.append("\n에러 -> ${it.message}")
