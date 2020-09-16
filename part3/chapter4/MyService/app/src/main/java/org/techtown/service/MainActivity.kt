@@ -24,22 +24,17 @@ class MainActivity : AppCompatActivity() {
             startService(intent)
         }
 
-        val passedIntent = getIntent()
-        passedIntent?.apply {
-            processIntent(this)
-        }
+        processIntent(intent)
     }
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
 
-        intent?.apply {
-            processIntent(this)
-        }
+        processIntent(intent)
     }
 
-    fun processIntent(intent:Intent) {
-        intent.extras?.apply {
+    fun processIntent(intent:Intent?) {
+        intent?.extras?.apply {
             val command = this.getString("command")
             val username = this.getString("username")
 
