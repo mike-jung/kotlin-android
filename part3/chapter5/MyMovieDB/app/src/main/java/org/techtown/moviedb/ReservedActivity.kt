@@ -12,7 +12,6 @@ class ReservedActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reserved)
 
-        val intent = getIntent()
         processIntent(intent)
 
         closeButton.setOnClickListener {

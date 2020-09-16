@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun savePosterToFile(drawableId:Int): Uri {
+    fun savePosterToFile(drawableId:Int): Uri {
         val drawable = ContextCompat.getDrawable(applicationContext, drawableId)
         val bitmap = (drawable as BitmapDrawable).bitmap
 
