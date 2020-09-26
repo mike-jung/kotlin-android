@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "711879210010",
+    "firebase_url": "https://myproject-88dbc.firebaseio.com",
+    "project_id": "myproject-88dbc",
+    "storage_bucket": "myproject-88dbc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711879210010:android:4653b946e16d37d6c54da3",
+        "android_client_info": {
+          "package_name": "org.techtown.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711879210010-udj0clsloom38rcq5fdcslta9b0l85tl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsfwl9qBPQOtf9nHzEK7pKNn5Z8AWLw08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711879210010-udj0clsloom38rcq5fdcslta9b0l85tl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711879210010:android:e8d8aa4db805c2d9c54da3",
+        "android_client_info": {
+          "package_name": "org.techtown.movie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711879210010-udj0clsloom38rcq5fdcslta9b0l85tl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsfwl9qBPQOtf9nHzEK7pKNn5Z8AWLw08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711879210010-udj0clsloom38rcq5fdcslta9b0l85tl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711879210010:android:4b37d0f5f5f1dc1cc54da3",
+        "android_client_info": {
+          "package_name": "org.techtown.push"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711879210010-udj0clsloom38rcq5fdcslta9b0l85tl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsfwl9qBPQOtf9nHzEK7pKNn5Z8AWLw08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711879210010-udj0clsloom38rcq5fdcslta9b0l85tl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

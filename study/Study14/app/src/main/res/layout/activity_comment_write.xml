@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#E6E6E6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:id="@+id/movieTitleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            android:text="군도" />
+
+        <ImageView
+            android:id="@+id/ratingView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_15" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BDBDBD" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:background="#FFFFFF">
+
+            <RatingBar
+                android:id="@+id/gradeRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="#FFFFFF"
+                style="?android:attr/ratingBarStyle"
+                android:numStars="5"
+                android:rating="0"
+                android:stepSize="0.1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gradeRatingBar"
+                android:layout_centerHorizontal="true"
+                android:textSize="18dp"
+                android:textColor="#ff888888"
+                android:text="평점을 입력해 주세요" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/authorInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:gravity="left"
+            android:padding="10dp"
+            android:textSize="18dp"
+            android:textCursorDrawable="@color/colorPrimaryDark"
+            android:hint="작성자"
+            android:background="@drawable/border" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#FFFFFF"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp">
+
+        <EditText
+            android:id="@+id/contentsInput"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLength="100"
+            android:gravity="top"
+            android:padding="10dp"
+            android:textSize="18dp"
+            android:textCursorDrawable="@color/colorPrimaryDark"
+            android:hint="100자 이내로 작성해주세요."
+            android:background="@drawable/border" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/linear_border"
+            android:layout_alignParentRight="true"
+            android:text="취 소"/>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/linear_border"
+            android:layout_toLeftOf="@+id/cancelButton"
+            android:layout_marginRight="10dp"
+            android:text="저 장"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

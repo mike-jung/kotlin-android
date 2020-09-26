@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/item1"
+            android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="현재상영" />
+        <item
+            android:id="@+id/item2"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="예매순" />
+        <item
+            android:id="@+id/item3"
+            android:icon="@android:drawable/ic_menu_mapmode"
+            android:title="영화관" />
+        <item
+            android:id="@+id/item4"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="즐겨찾기" />
+    </group>
+
+</menu>
