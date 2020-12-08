@@ -14,7 +14,7 @@ import org.json.JSONObject
 class MainActivity : AppCompatActivity() {
     companion object {
         var requestQueue: RequestQueue? = null
-        var regId = "dHT2ngIvTne24yiO8oPPmG:APA91bHH3lPoHGVL0u8gOuAa2G0Iz4WlXsZ7XCwyWgGJ7r7JTTlMX99qGPx4D-ibwuahUjck-lnGqOgx8CErTAXKMbGtLYpBpYkTLFyqs1nk_vtSpF_aHbmjU1s2D90y2cs0297jXD6m"
+        var regId = "c14xpyVRQmW-Ty1pNcg_Wo:APA91bEKedtTQ9WjY6FXkrwigQFFAZmSfemhEGYHV7uLlcdWp2OlcP7mtOGPGR_lt33o4BxqQ-CirsxBN2-THUY2ycY0AQFGowPSiWZIU6kKApU1t-SYCbkIfxqdov6Vj3BhAgbFpnDA"
         var apiKey = "AAAApb9OtBo:APA91bEHErXdlDIKUmLyPNEi-7VlYVJsox831B8mvqNe73a6hgHQOKkvHsuS11y7Q6F107e3jHCxlWXpddwXPFLSqAGjFLodbpo8o4QPEuJSxSDMfAVKyVASVL3RQP6uxrtCPtb15XCa"
     }
 

@@ -55,9 +55,9 @@ class MainActivity : AppCompatActivity() {
 
         adapter = MovieCommentAdapter()
 
-        //adapter.items.add(MovieComment("0", "sky2****", "1분전", 5.0f, "정말 스릴넘치는 영화였어요. 한 번 더 보고 싶은 영화!!!", 5))
-        //adapter.items.add(MovieComment("1", "john****", "3분전", 4.5f, "재미있어요.", 3))
-        //adapter.items.add(MovieComment("2", "acou****", "12분전", 4.8f, "실화라고 생각하기에는 너무 영화같은...", 13))
+        //adapter.items.add(MovieComment("0", "sky2****", "1분전", 5, "정말 스릴넘치는 영화였어요. 한 번 더 보고 싶은 영화!!!", 5))
+        //adapter.items.add(MovieComment("1", "john****", "3분전", 4, "재미있어요.", 3))
+        //adapter.items.add(MovieComment("2", "acou****", "12분전", 4, "실화라고 생각하기에는 너무 영화같은...", 13))
 
         recyclerView.adapter = adapter
 

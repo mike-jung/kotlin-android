@@ -1,2 +1,2 @@
+rootProject.name = "MyRequest2"
 include ':app'
-rootProject.name = "영화 정보 요청"

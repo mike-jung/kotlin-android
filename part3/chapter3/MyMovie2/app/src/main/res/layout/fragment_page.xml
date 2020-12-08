@@ -36,7 +36,6 @@
                 android:textSize="20sp" />
 
             <ImageView
-                android:id="@+id/posterImageView"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="false"

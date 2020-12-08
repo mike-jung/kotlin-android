@@ -1,11 +1,10 @@
 package org.techtown.image
 
 import android.graphics.Matrix
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.widget.FrameLayout
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.marginLeft
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

@@ -3,8 +3,8 @@ package org.techtown.map
 import android.location.Location
 import android.os.Bundle
 import android.os.Looper
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.common.GooglePlayServicesUtil
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -12,7 +12,8 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.pedro.library.AutoPermissions
+import com.yanzhenjie.permission.AndPermission
+import com.yanzhenjie.permission.runtime.Permission
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -40,11 +41,17 @@ class MainActivity : AppCompatActivity() {
             requestLocation()
         }
 
-        AutoPermissions.Companion.loadAllPermissions(this, 101);
-    }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        AndPermission.with(this)
+            .runtime()
+            .permission(Permission.Group.LOCATION)
+            .onGranted { permissions ->
+                Log.d("Main", "허용된 권한 갯수 : ${permissions.size}")
+            }
+            .onDenied { permissions ->
+                Log.d("Main", "거부된 권한 갯수 : ${permissions.size}")
+            }
+            .start()
     }
 
     private fun requestLocation() {
@@ -121,8 +128,10 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
 
         try {
-            locationClient?.removeLocationUpdates(locationCallback)
-            map?.isMyLocationEnabled = false
+            if (initialized) {
+                locationClient?.removeLocationUpdates(locationCallback)
+                map?.isMyLocationEnabled = false
+            }
         } catch(e: SecurityException) {}
     }
 

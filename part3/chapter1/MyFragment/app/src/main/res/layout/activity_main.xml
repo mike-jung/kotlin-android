@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <!--
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment"
         android:name="org.techtown.fragment.LoginFragment"
         android:layout_width="match_parent"

@@ -10,10 +10,11 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.DocumentsContract
 import android.provider.MediaStore
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
-import com.pedro.library.AutoPermissions
-import com.pedro.library.AutoPermissions.Companion.parsePermissions
+import com.yanzhenjie.permission.AndPermission
+import com.yanzhenjie.permission.runtime.Permission
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 
@@ -32,11 +33,17 @@ class MainActivity : AppCompatActivity() {
             getFromAlbum()
         }
 
-        AutoPermissions.Companion.loadAllPermissions(this, 101)
-    }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        AndPermission.with(this)
+                .runtime()
+                .permission(Permission.Group.STORAGE)
+                .onGranted { permissions ->
+                    Log.d("Main", "허용된 권한 갯수 : ${permissions.size}")
+                }
+                .onDenied { permissions ->
+                    Log.d("Main", "거부된 권한 갯수 : ${permissions.size}")
+                }
+                .start()
     }
 
     fun takePicture(){

@@ -1,16 +1,11 @@
 package org.techtown.receiver
 
 import android.content.BroadcastReceiver
-import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.net.ConnectivityManager
 import android.net.ConnectivityManager.CONNECTIVITY_ACTION
-import android.net.ConnectivityManager.EXTRA_NETWORK_INFO
-import android.net.NetworkInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

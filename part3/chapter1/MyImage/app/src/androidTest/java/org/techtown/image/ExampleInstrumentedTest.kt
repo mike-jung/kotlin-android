@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("org.techtown.image", appContext.packageName)
+        assertEquals("org.techtown.myimage", appContext.packageName)
     }
 }

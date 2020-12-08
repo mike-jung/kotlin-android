@@ -3,8 +3,10 @@ package org.techtown.recorder
 import android.media.MediaPlayer
 import android.media.MediaRecorder
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.pedro.library.AutoPermissions
+import com.yanzhenjie.permission.AndPermission
+import com.yanzhenjie.permission.runtime.Permission
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 
@@ -39,7 +41,17 @@ class MainActivity : AppCompatActivity() {
             output1.append("재생 중지함\n")
         }
 
-        AutoPermissions.Companion.loadAllPermissions(this, 101)
+
+        AndPermission.with(this)
+            .runtime()
+            .permission(Permission.Group.STORAGE)
+            .onGranted { permissions ->
+                Log.d("Main", "허용된 권한 갯수 : ${permissions.size}")
+            }
+            .onDenied { permissions ->
+                Log.d("Main", "거부된 권한 갯수 : ${permissions.size}")
+            }
+            .start()
     }
 
     fun startRecording() {

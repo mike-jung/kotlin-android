@@ -3,9 +3,19 @@ package org.techtown.crawling
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import io.reactivex.MaybeObserver
+import io.reactivex.Observable
+import io.reactivex.Single
+import io.reactivex.SingleObserver
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jsoup.Jsoup
 import org.jsoup.select.Elements
+import java.nio.charset.Charset
 
 class MainActivity : AppCompatActivity() {
     val url = "https://movie.naver.com/movie/running/current.nhn?order=reserve"
@@ -15,23 +25,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         startButton.setOnClickListener {
-            MyAsyncTask().execute(url)
+            doTask()
         }
 
     }
 
-    inner class MyAsyncTask: AsyncTask<String, String, String>() {
+    fun doTask() {
+        showData("요청 url -> ${url}")
+
         var itemList: ArrayList<MovieItem> = arrayListOf()
+        var documentTitle:String = ""
 
-        override fun onPreExecute() {
-            super.onPreExecute()
 
-            showData("요청 url -> ${url}")
-        }
+        Single.fromCallable {
 
-        override fun doInBackground(vararg params: String?): String {
             try {
-                val doc = Jsoup.connect("${params[0]}").get()
+                val doc = Jsoup.connect(url).get()
 
                 val elems: Elements = doc.select("ul.lst_detail_t1 li")
                 run elemsLoop@{
@@ -50,18 +59,27 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
 
-                return doc.title()
+                documentTitle = doc.title()
 
             } catch (e: Exception) {
                 e.printStackTrace()
-                return ""
             }
-        }
 
-        override fun onPostExecute(result: String?) {
-            showData(itemList.joinToString())
+            return@fromCallable documentTitle
         }
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ text ->
+                    showData("onSuccess called.")
+
+                    showData(itemList.joinToString())
+                }, {
+                    showData("onError called.")
+                    it.printStackTrace()
+                })
+
     }
+
 
     fun showData(message:String) {
         output1.append(message + "\n")

@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:text="내 위치 확인" />
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

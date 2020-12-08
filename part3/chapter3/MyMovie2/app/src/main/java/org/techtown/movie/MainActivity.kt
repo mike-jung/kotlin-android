@@ -102,6 +102,7 @@ class MainActivity : AppCompatActivity(), FragmentCallback {
     }
 
     fun requestDetails(dailyBoxOfficeList:ArrayList<MovieInfo>) {
+        MovieList.data.clear()
         for (index in 0..4) {
             var movieData = MovieData(dailyBoxOfficeList[index], null, null)
             MovieList.data.add(movieData)

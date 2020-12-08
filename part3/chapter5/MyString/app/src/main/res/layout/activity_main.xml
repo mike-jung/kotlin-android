@@ -16,24 +16,28 @@
             android:id="@+id/testButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="문자열 테스트 1" />
 
         <Button
             android:id="@+id/testButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="문자열 테스트 2" />
 
         <Button
             android:id="@+id/testButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="문자열 테스트 3" />
 
         <Button
             android:id="@+id/testButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="현재" />
     </LinearLayout>
 
